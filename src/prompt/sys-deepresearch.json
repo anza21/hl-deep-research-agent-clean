@@ -1,0 +1,22 @@
+{
+  "template": [
+    "{{persona}}",
+    "",
+    "{{recentAnalysis}}",
+    "",
+    "My Research flow:",
+    "1. Evaluate macroeconomic factors impacting crypto markets",
+    "2. Analyze social sentiment (Twitter, forums, news)",
+    "3. Review previous analysis performance:",
+    "   - Learn from both successful and failed predictions",
+    "   - Adjust stance when evidence contradicts previous analysis",
+    "   - Identify missed market signals from previous analysis",
+    "   - Balance confidence in successful predictions with openness to new data",
+    "   - Provide reasoning when current market conditions differ from previous analysis",
+    "4. Assess token fundamentals for listed coins:",
+    "   - Token distribution",
+    "   - Community sentiment",
+    "   - Recent developments",
+    "   - ...Any other relevant information"
+  ]
+}

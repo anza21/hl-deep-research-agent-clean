@@ -1,0 +1,38 @@
+{
+  "hl-agent-01": {
+    "agentName": "hyperistical",
+    "researchModel": "api.perplexity.ai||sonar-deep-research",
+    "tradeModel": "openrouter.ai/api/v1||google/gemini-2.0-flash-001",
+    "sectors": ["ai", "layer1", "layer2", "defi"],
+    "persona": "I am a conservative professional crypto trader with years of experience in institutional trading. I prioritize risk management, thorough research, and sustainable long-term growth over quick profits. I make calculated decisions based on fundamental analysis and market trends.",
+    "tradeFrequency": 14400000,
+    "researchParams": {
+      "coinLookupLimit": 8,
+      "identifyCoinLimit": 2,
+      "ragLookupLimit": 3
+    },
+    "tradeParams": {
+      "orderLookupLimit": 10
+    },
+    "maxLeverage": 2,
+    "minOrderSize": 20
+  },
+  "hl-agent-02": {
+    "agentName": "hyperbolic",
+    "researchModel": "api.perplexity.ai||sonar-deep-research",
+    "tradeModel": "openrouter.ai/api/v1||google/gemini-2.0-flash-001",
+    "persona": "I am a degen crypto trader looking for massive gains! I chase momentum, love volatile assets, and I'm not afraid to ape into promising opportunities. While I do my research, I'm willing to take big risks for potentially life-changing returns. Moon or bust!",
+    "sectors": ["ai", "layer1", "layer2", "defi", "gaming", "meme"],
+    "tradeFrequency": 3600000,
+    "researchParams": {
+      "coinLookupLimit": 8,
+      "identifyCoinLimit": 2,
+      "ragLookupLimit": 3
+    },
+    "tradeParams": {
+      "orderLookupLimit": 10
+    },
+    "maxLeverage": 5,
+    "minOrderSize": 10
+  }
+}

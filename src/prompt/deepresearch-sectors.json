@@ -1,0 +1,18 @@
+{
+  "template": [
+    "There are reasons to believe that the market is headed in the {{direction}} direction.",
+    "Reasons for this belief:",
+    "{{marketReasons}}",
+    "",
+    "Determine which one or more of the following sectors this research is most applicable to and give reasons for your conviction.",
+    "{{allSectors}}",
+    "",
+    "Format results in XML. If comments are necessary, place in <?ignore?> tags.",
+    "<sectors>",
+    "  <sector>",
+    "    <name>name of sector</name>",
+    "    <reasons>around 2 reasons for conviction</reasons>",
+    "  </sector>",
+    "</sectors>"
+  ]
+}

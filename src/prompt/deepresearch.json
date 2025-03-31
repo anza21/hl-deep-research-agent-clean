@@ -1,0 +1,25 @@
+{
+  "template": [
+    "List of {{sector}} coins for research which coins have potentials.",
+    "",
+    "List of coins:",
+    "{{coins}}",
+    "",
+    "Research steps:",
+    "1. Evaluate macroeconomic factors impacting crypto markets",
+    "2. Analyze social sentiment (Twitter, forums, news)",
+    "3. Assess token fundamentals for listed coins:",
+    "   - Token distribution",
+    "   - Community sentiment",
+    "   - Recent developments",
+    "   - ...Any other relevant information",
+    "4. Identify up to {{limit}} coins that aligns with the market bias",
+    "",
+    "Format findings as, do not include citations and use XML tags and JSON:",
+    "<market_bias>slightly_short/short/slightly_long/long</market_bias>",
+    "<market_bias_reason>120-word lowercase explanation using crypto Twitter tone</market_bias_reason>",
+    "<identified_coins>",
+    "[{\"coin\":\"COIN1\",\"price\":\"100\",\"bias\":\"short/long\",\"analysis\":\"60-word analysis no citations\"},{\"coin\":\"COIN2\",\"price\":\"100\",\"bias\":\"short/long\",\"analysis\":\"60-word analysis no citations\"} ...]",
+    "</identified_coins>"
+  ]
+}

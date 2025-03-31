@@ -1,0 +1,20 @@
+{
+  "template": [
+    "Decide on a broad market bias (long/short) especially for short-term crypto trading.",
+    "Provide reasons for your conviction, and state for how long your conviction will be applicable.",
+    "",
+    "Research steps:",
+    "1. Evaluate macroeconomic factors impacting crypto markets",
+    "2. Analyze social sentiment (Twitter, forums, news)",
+    "3. Assess token fundamentals for listed coins:",
+    "   - Token distribution",
+    "   - Community sentiment",
+    "   - Recent developments",
+    "   - etc.",
+    "",
+    "Format results in XML. If comments are necessary, place in <?ignore?> tags.",
+    "<direction>short/long</direction>",
+    "<reasons>around 3 reasons for conviction, as one continuous string of text with no line breaks</reasons>",
+    "<applicability>number of days</applicability>"
+  ]
+}
