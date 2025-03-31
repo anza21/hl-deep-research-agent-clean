@@ -303,7 +303,7 @@ class HLDeepResearchAgent {
           100
         ).toFixed(2);
 
-        ragData.push(`${o.coin} ${leverage} ${ago}`);
+        ragData.push(`${o.coin} ${leverage}x ${ago}`);
         ragData.push(`- Entry Price: ${mainOrderEntry}`);
         ragData.push(`- ${orderType} ${order.status} at ${o.triggerPx}`);
         ragData.push(`- PnL: ${pnlPercent} ($${pnlUsd})`);

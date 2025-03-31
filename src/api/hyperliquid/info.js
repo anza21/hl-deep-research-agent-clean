@@ -19,11 +19,11 @@ const getCoinsByFundingRate = async (sector, minVolume) => {
     // Check if this coin is in our sector
     if (coins.includes(coinName)) {
       const coinContext = metadata[1][j];
+      coinToPrice[coinName] = Number(coinContext["midPx"]);
 
       // Only process coins with sufficient volume
       if (coinContext["dayNtlVlm"] >= minVolume) {
         coinToFunding[coinName] = Number(coinContext["funding"]);
-        coinToPrice[coinName] = Number(coinContext["midPx"]);
 
         // Sort into positive or negative funding arrays
         if (coinToFunding[coinName] > 0) {
