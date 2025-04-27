@@ -1,0 +1,33 @@
+{
+  "id": "gen-1745765978-5S24AmmrQG3y73hUP4aB",
+  "provider": "OpenAI",
+  "model": "openai/gpt-3.5-turbo",
+  "object": "chat.completion",
+  "created": 1745765978,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<market_bias>sightly_long</market_bias>\n<market_bias_reason>market buzz says AI integration accelerating across industries, bullish on AI-focused coins, but watch market volatility closely for entry points</market_bias_reason>\n<identified_coins>\n[{\"coin\":\"FET-PERP\",\"price\":\"0.74538\",\"bias\":\"long\",\"analysis\":\"FET has solid use-case in AI-driven decentralized computing, recent partnerships expanding its ecosystem, tokenomics promising for growth\"},\n{\"coin\":\"NEAR-PERP\",\"price\":\"2.52925\",\"bias\":\"long\",\"analysis\":\"NEAR integrating AI for scalability solutions, strong community support, upcoming developments hint at potential price surge\"}]\n</identified_coins>",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 461,
+    "completion_tokens": 142,
+    "total_tokens": 603,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  }
+}

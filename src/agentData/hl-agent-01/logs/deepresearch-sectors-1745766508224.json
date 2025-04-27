@@ -1,0 +1,33 @@
+{
+  "id": "gen-1745766513-42WrUhMb5FSDz3p5pSWZ",
+  "provider": "OpenAI",
+  "model": "openai/gpt-3.5-turbo",
+  "object": "chat.completion",
+  "created": 1745766513,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<sectors>\n  <sector>\n    <name>defi</name>\n    <reasons>Increased adoption of decentralized finance platforms and growing interest in yield farming among investors.</reasons>\n  </sector>\n</sectors>",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 131,
+    "completion_tokens": 49,
+    "total_tokens": 180,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  }
+}

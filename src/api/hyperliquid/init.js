@@ -38,7 +38,14 @@ for (const agentId in agentsConfigs) {
     testnet: process.env.ISMAINNET !== "TRUE",
     walletAddress,
   });
-  await sdkAgents[agentId].connect();
+  try {
+    await sdkAgents[agentId].connect();
+    console.log(`✅ Connected Hyperliquid agent: ${agentId}`);
+  } catch (err) {
+    console.error(`❌ Failed to connect Hyperliquid agent: ${agentId}`);
+    console.error(err.message);
+  }
+
 }
 
 export { sdkAgents };

@@ -1,0 +1,33 @@
+{
+  "id": "gen-1745765974-ZVbkP4dv54Up5HZfH05I",
+  "provider": "OpenAI",
+  "model": "openai/gpt-3.5-turbo",
+  "object": "chat.completion",
+  "created": 1745765974,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<direction>short</direction>\n<reasons>The recent downtrend in global equity markets could lead to increased selling pressure in the crypto markets; negative sentiment on social media platforms; token fundamentals showing lackluster community sentiment and few positive developments</reasons>\n<applicability>14 days</applicability>",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 161,
+    "completion_tokens": 65,
+    "total_tokens": 226,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  }
+}

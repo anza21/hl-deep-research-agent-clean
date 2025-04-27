@@ -1,0 +1,33 @@
+{
+  "id": "gen-1745766516-YVuyrh2zuKTRaaKz8cTB",
+  "provider": "OpenAI",
+  "model": "openai/gpt-3.5-turbo",
+  "object": "chat.completion",
+  "created": 1745766516,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<placeOrders>  \n  [\n    {\n      \"coin\": \"COMP-PERP\",\n      \"side\": \"long\",\n      \"leverage\": \"1\",\n      \"entry\": \"43.9\",\n      \"takeProfit\": \"45.5\",\n      \"stopLoss\": \"43\",\n      \"size\": \"0.02\",\n      \"reason\": \"Compound Finance has solid fundamentals and recent positive developments, with a slight long bias in the market.\"\n    },\n    {\n      \"coin\": \"MKR-PERP\",\n      \"side\": \"long\",\n      \"leverage\": \"1\",\n      \"entry\": \"1505\",\n      \"takeProfit\": \"1525\",\n      \"stopLoss\": \"1495\",\n      \"size\": \"0.015\",\n      \"reason\": \"MakerDAO's governance model and continuous improvements make it a reliable investment option, with a slight long bias in the market.\"\n    }\n  ]\n</placeOrders>",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 1865,
+    "completion_tokens": 195,
+    "total_tokens": 2060,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  }
+}

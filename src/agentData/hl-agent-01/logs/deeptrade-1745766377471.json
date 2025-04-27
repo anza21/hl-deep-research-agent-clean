@@ -1,0 +1,33 @@
+{
+  "id": "gen-1745766383-AIHGx4eayFEDsLyxKI3N",
+  "provider": "OpenAI",
+  "model": "openai/gpt-3.5-turbo",
+  "object": "chat.completion",
+  "created": 1745766383,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<placeOrders> \n  [\n    {\n      \"coin\": \"COMP-PERP\",\n      \"side\": \"long\",\n      \"leverage\": \"2\",\n      \"entry\": \"43.9\",\n      \"takeProfit\": \"44.9\",\n      \"stopLoss\": \"43.2\",\n      \"size\": \"0.001\",\n      \"reason\": \"Compound Finance remains strong in DeFi with growth potential.\"\n    },\n    {\n      \"coin\": \"MKR-PERP\",\n      \"side\": \"long\",\n      \"leverage\": \"2\",\n      \"entry\": \"1520\",\n      \"takeProfit\": \"1550\",\n      \"stopLoss\": \"1500\",\n      \"size\": \"0.001\",\n      \"reason\": \"MakerDAO's DAI is reliable with continuous protocol improvements.\"\n    }\n  ]\n</placeOrders>",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 1867,
+    "completion_tokens": 177,
+    "total_tokens": 2044,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  }
+}

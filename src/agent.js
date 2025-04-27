@@ -16,6 +16,7 @@ import { calculateTPSLOrderPNL } from "./utils.js";
 import { getSimpleTools } from "./tools/tools.js";
 import fs from "fs";
 import path from "path";
+import fetch from "node-fetch";
 
 class HLDeepResearchAgent {
   constructor(agent, config) {

@@ -40,6 +40,7 @@ const loop = async () => {
   while (true) {
     for (const agent of agentsInstances) {
       console.log(`[HLDR-AGENT] Running agent: ${agent.config.agentId}`);
+      console.log(`[Debug] Running agent: ${agent.agentId}`);
       await agent.runOnce(); // error are retry inside agent
     }
     console.log(

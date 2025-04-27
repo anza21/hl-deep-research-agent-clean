@@ -1,0 +1,27 @@
+{
+  "agentDataDir": "./src/agentData",
+  "researchModel": "https://openrouter.ai/api/v1||gpt-3.5-turbo",
+  "tradeModel": "https://openrouter.ai/api/v1||gpt-3.5-turbo",
+  "retryLimit": 3,
+  "researchParams": {
+    "coinLookupLimit": 8,
+    "identifyCoinLimit": 2,
+    "ragLookupLimit": 3
+  },
+  "tradeParams": {
+    "orderLookupLimit": 10
+  },
+  "tradeFrequency": 14400000,
+  "maxLeverage": 2,
+  "minOrderSize": 20,
+  "sectors": [
+    "ai",
+    "layer1",
+    "layer2",
+    "defi"
+  ],
+  "persona": "I am a conservative professional crypto trader with years of experience in institutional trading. I prioritize risk management, thorough research, and sustainable long-term growth over quick profits. I make calculated decisions based on fundamental analysis and market trends.",
+  "telegram": true,
+  "agentId": "hl-agent-01",
+  "agentName": "hyperistical"
+}

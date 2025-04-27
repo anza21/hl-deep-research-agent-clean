@@ -1,0 +1,21 @@
+[
+  {
+    "market_bias": "sightly_long",
+    "market_bias_reason": "feeling bullish on DeFi coins, seeing positive social sentiment and recent market developments favoring DeFi projects, potential for growth in DeFi sector",
+    "identified_coins": [
+      {
+        "coin": "COMP-PERP",
+        "price": "42.789",
+        "bias": "long",
+        "analysis": "Compound Finance remains a strong player in DeFi, with a solid track record and active community. Recent integrations and partnerships indicate further growth potential."
+      },
+      {
+        "coin": "MKR-PERP",
+        "price": "1488.7",
+        "bias": "long",
+        "analysis": "MakerDAO's stablecoin DAI is a cornerstone in DeFi, Maker governance model and continuous protocol improvements make it a reliable investment option."
+      }
+    ],
+    "runId": 1745766079942
+  }
+]

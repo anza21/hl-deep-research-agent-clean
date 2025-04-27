@@ -1,0 +1,21 @@
+[
+  {
+    "market_bias": "sightly_long",
+    "market_bias_reason": "market buzz says AI integration accelerating across industries, bullish on AI-focused coins, but watch market volatility closely for entry points",
+    "identified_coins": [
+      {
+        "coin": "FET-PERP",
+        "price": "0.74538",
+        "bias": "long",
+        "analysis": "FET has solid use-case in AI-driven decentralized computing, recent partnerships expanding its ecosystem, tokenomics promising for growth"
+      },
+      {
+        "coin": "NEAR-PERP",
+        "price": "2.52925",
+        "bias": "long",
+        "analysis": "NEAR integrating AI for scalability solutions, strong community support, upcoming developments hint at potential price surge"
+      }
+    ],
+    "runId": 1745765970919
+  }
+]

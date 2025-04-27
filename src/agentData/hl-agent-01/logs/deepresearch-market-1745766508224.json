@@ -1,0 +1,33 @@
+{
+  "id": "gen-1745766512-NSPqwcSCuSvd4Rd4Ync6",
+  "provider": "OpenAI",
+  "model": "openai/gpt-3.5-turbo",
+  "object": "chat.completion",
+  "created": 1745766512,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<direction>short</direction>\n<reasons>The overall macroeconomic environment is unstable, with rising inflation and potential interest rate hikes leading to market uncertainty. Social sentiment on platforms like Twitter and forums is increasingly bearish, with concerns about regulatory crackdowns and negative news impacting prices. Token fundamentals for many listed coins show overinflated valuations, lack of real-world utility, and high concentration of tokens in the hands of a few holders.</reasons>\n<applicability>30 days</applicability>",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 161,
+    "completion_tokens": 105,
+    "total_tokens": 266,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  }
+}

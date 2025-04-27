@@ -1,0 +1,33 @@
+{
+  "id": "gen-1745766238-GOF4ALyWeSsiD33ICDCL",
+  "provider": "OpenAI",
+  "model": "openai/gpt-3.5-turbo",
+  "object": "chat.completion",
+  "created": 1745766238,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<direction>short</direction>\n<reasons>1. The recent crackdown on cryptocurrency mining in China has caused a significant drop in mining activity and trading volume, leading to bearish sentiment in the market.\n2. Negative regulatory news from various countries, such as India and Turkey, have further fueled fears of a regulatory crackdown on cryptocurrencies.\n3. The overall market sentiment remains cautious and risk-averse, as investors are worried about the potential impact of inflation and rising interest rates on the cryptocurrency market.</reasons>\n<applicability>30 days</applicability>",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 161,
+    "completion_tokens": 116,
+    "total_tokens": 277,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  }
+}

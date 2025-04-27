@@ -1,0 +1,33 @@
+{
+  "id": "gen-1745766378-79ZtwkLEF8YFfQ0kOrwE",
+  "provider": "OpenAI",
+  "model": "openai/gpt-3.5-turbo",
+  "object": "chat.completion",
+  "created": 1745766378,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<direction>short</direction>\n<reasons>1. Macro factors such as rising inflation and potential interest rate hikes may lead to a risk-off environment, causing investors to pull out of riskier assets like cryptocurrencies.\n2. Social sentiment on Twitter and forums is currently mixed, with a noticeable increase in FUD (Fear, Uncertainty, Doubt) surrounding regulatory crackdowns and market manipulation.\n3. Token fundamentals for many listed coins show a lack of significant positive developments, with some projects facing challenges with token distribution and community engagement.</reasons>\n<applicability>30 days</applicability>",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 161,
+    "completion_tokens": 124,
+    "total_tokens": 285,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  }
+}

@@ -1,6 +1,8 @@
 import { sdkAgents } from "./init.js";
 import { normaliseDecimals } from "./utils.js";
 
+const MIN_ORDER_VALUE = 10; // Minimum order value in $
+
 /**
  * Close a position on HyperLiquid
  * @param {String[]} coins - coins to close, e.g. ["BTC-PERP", "ETH-PERP"]
@@ -61,6 +63,7 @@ const closePositions = async (coins = [], agentId) => {
   }
   return results;
 };
+
 /**
  * Update leverage and place an order on HyperLiquid
  * @param {Object} params - parameters for the order
@@ -122,6 +125,12 @@ const updateLeverageAndPlaceOrder = async (
   entry = normaliseDecimals(entry, "px", coinMeta.szDecimals);
   takeProfit = normaliseDecimals(takeProfit, "px", coinMeta.szDecimals);
   stopLoss = normaliseDecimals(stopLoss, "px", coinMeta.szDecimals);
+
+  // Ensure the order value meets the minimum requirement
+  const orderValue = size * entry; // Assuming entry price is in $
+  if (orderValue < MIN_ORDER_VALUE) {
+    return `Order value too small. Minimum required is $${MIN_ORDER_VALUE}. Current value: $${orderValue}`;
+  }
 
   const mainOrder = {
     coin,

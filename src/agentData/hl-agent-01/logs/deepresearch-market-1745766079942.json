@@ -1,0 +1,33 @@
+{
+  "id": "gen-1745766084-PcRAzrueqQBSDSUrVyBY",
+  "provider": "OpenAI",
+  "model": "openai/gpt-3.5-turbo",
+  "object": "chat.completion",
+  "created": 1745766084,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<direction>Short</direction>\n<reasons>The recent regulatory crackdown on cryptocurrencies by various governments has created a negative sentiment in the market. Additionally, the ongoing economic uncertainty due to the pandemic has increased risk aversion among investors, leading them to pull out of riskier assets like crypto. Finally, technical indicators are showing signs of overbought conditions, suggesting a potential correction.</reasons>\n<applicability>30 days</applicability>",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 161,
+    "completion_tokens": 92,
+    "total_tokens": 253,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  }
+}

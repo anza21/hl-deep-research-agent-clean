@@ -1,0 +1,33 @@
+{
+  "id": "gen-1745766245-bHFHXd1OPH4Iy1W7xj2j",
+  "provider": "OpenAI",
+  "model": "openai/gpt-3.5-turbo",
+  "object": "chat.completion",
+  "created": 1745766245,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<placeOrders> \n  [{'coin': 'COMP-PERP', 'side': 'long', 'leverage': '1', 'entry': '43.9', 'takeProfit': '44.8', 'stopLoss': '43.0', 'size': '0.02', 'reason': 'Compound Finance is showing strength in the DeFi sector with potential for growth.'},\n  {'coin': 'MKR-PERP', 'side': 'long', 'leverage': '1', 'entry': '1510.0', 'takeProfit': '1540.0', 'stopLoss': '1490.0', 'size': '0.01', 'reason': 'MakerDAO's stability and governance make it a reliable investment choice.'}]\n</placeOrders>",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 1867,
+    "completion_tokens": 164,
+    "total_tokens": 2031,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  }
+}
