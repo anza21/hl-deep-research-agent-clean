@@ -1,3 +1,9 @@
+## About the Repository
+
+The name **clean** was chosen after many unsuccessful attempts to configure and make the project work correctly. Once the solution was found using **OpenRouter** and the project was verified to function as intended, the decision was made to create a new, clean repository.
+
+This repository was created with the goal of providing clarity in the code, ease of understanding, and an improved structure for the project.
+
 # Hyperliquid Deepresearch Agent
 
 ## Overview
