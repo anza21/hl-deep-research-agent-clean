@@ -4,7 +4,7 @@
 
 An autonomous trading agent for Hyperliquid that combines deep research with automated execution. The agent:
 
-- Conducts thorough market research using Perplexity AI
+- Conducts thorough market research using OpenRouter API with GPT-based models
 - Analyzes market sentiment and directional bias
 - Evaluates sector-specific opportunities (e.g., DeFi, L1s, AI)
 - Identifies promising assets aligned with market conditions
@@ -20,6 +20,12 @@ An autonomous trading agent for Hyperliquid that combines deep research with aut
 - Learns from historical research data
 - Tracks performance of past coin selections
 - Incorporates historical trade PnL for strategy refinement
+
+### Models Used
+The agent leverages the **OpenRouter API** with models such as:
+- `gpt-4-turbo`: Used for advanced market research and sentiment analysis
+- `gpt-3.5-turbo`: Used for faster, cost-efficient research tasks
+- Additional models can be configured via the `agentConfig.json` file.
 
 ### Current Limitations
 
@@ -38,37 +44,52 @@ An autonomous trading agent for Hyperliquid that combines deep research with aut
 
 ### API Keys
 
-- Perplexity API (required for market research)
-- Hyperliquid API keys (for market data and trading)
-- Telegram (optional for notifications)
+To enable the agent's features, you'll need to configure the following API keys in a `.env` file or equivalent:
+
+- **OpenRouter API**:
+  - `OPENROUTER_API_KEY`: Your OpenRouter API key for accessing GPT-based models.
+  - `BASE_URL`: The base URL for the API, typically `https://openrouter.ai/api/v1`.
+  - `MODEL_NAME`: The model to use, e.g., `gpt-4-turbo` or `gpt-3.5-turbo`.
+
+- **Hyperliquid API**:
+  - `HYPERLIQUID_API_PRIVATE_KEY_<AGENT_ID>`: Private API key for the agent.
+  - `HYPERLIQUID_API_ADDRESS_<AGENT_ID>`: The trading account address for the corresponding agent.
+
+- **Telegram Bot**:
+  - `TELEGRAM_CHAT_ID`: Your Telegram chat ID to receive notifications.
+  - `TELEGRAM_BOT_TOKEN`: Your Telegram bot token.
+
+- **Webserver API**:
+  - `WEBSERVER_API_KEY`: API key for authenticating webserver requests.
 
 ### Environment Variables
 
 ```env
-ISMAINNET=TRUE/FALSE
-PERPLEXITY_API_KEY=<your-key>
-TELEGRAM_CHAT_ID=<your-chat-id>
-TELEGRAM_BOT_TOKEN=<your-bot-token>
-WEBSERVER_API_KEY=<your-api-key>  # For SuperiorAgents.com integration
+# Environment Variables Configuration
+
+# === GENERAL CONFIGURATION ===
+ISMAINNET=true
+
+# === AI PROVIDER ===
+OPENROUTER_API_KEY=<your-openrouter-api-key>
+BASE_URL=https://openrouter.ai/api/v1
+MODEL_NAME=gpt-3.5-turbo
+
+# === HYPERLIQUID CONFIGURATION ===
+HYPERLIQUID_API_PRIVATE_KEY_HL_AGENT_01=<your-private-key-for-agent-01>
+HYPERLIQUID_API_ADDRESS_HL_AGENT_01=<your-address-for-agent-01>
+HYPERLIQUID_API_PRIVATE_KEY_HL_AGENT_02=<your-private-key-for-agent-02>
+HYPERLIQUID_API_ADDRESS_HL_AGENT_02=<your-address-for-agent-02>
+
+# === TELEGRAM CONFIGURATION ===
+TELEGRAM_CHAT_ID=<your-telegram-chat-id>
+TELEGRAM_BOT_TOKEN=<your-telegram-bot-token>
+
+# === WEBSERVER CONFIGURATION ===
+WEBSERVER_API_KEY=<your-webserver-api-key>
 ```
 
-### Webserver Integration
-
-The agent includes a built-in API endpoint that allows [SuperiorAgents.com](https://superioragents.com/) to fetch performance metrics and trading statistics. This integration enables:
-
-- Real-time performance monitoring
-- Historical trade analysis
-- Agent comparison and rankings
-
-#### Authentication
-
-The webserver uses API key authentication for secure access:
-
-- Set `WEBSERVER_API_KEY` in your environment variables
-- Include this key in the request header for all API calls
-- Default port: 3000 (configurable)
-
-#### API Endpoints
+---
 
 ## Configuration
 
@@ -77,7 +98,7 @@ The webserver uses API key authentication for secure access:
 Configure multiple agents with different strategies, key name is agent's unique ID, which is also used as file path.
 
 - `agentName`: Your agent's name
-- `researchModel`: Research AI model
+- `researchModel`: Research AI model (e.g., `gpt-4-turbo`, `gpt-3.5-turbo`)
 - `tradeModel`: Trading AI model
 - `sectors`: Target sectors for trading
 - `persona`: Trading style and risk profile
@@ -100,6 +121,8 @@ Security configuration for each agent:
 - `privateKeyTestnet`: Testnet API key
 
 **Important Note**: The private keys are API keys generated from the [Hyperliquid API Portal](https://app.hyperliquid.xyz/api), not wallet private keys. These grant your agent trading permissions on your specified account.
+
+---
 
 ## Quick Start
 
