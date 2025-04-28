@@ -9,9 +9,11 @@ const MIN_ORDER_VALUE = 10; // Minimum order value in $
  * @returns {Promise<Object>} - order response
  */
 const closePositions = async (coins = [], agentId) => {
+  console.log("[DEBUG] closePositions called with coins:", coins); // Προσθέτουμε αυτό το log
+  console.log("[DEBUG] closePositions agentId:", agentId);         // Και αυτό
+
   const sdk = sdkAgents[agentId];
   const results = [];
-  // Ensure coins is an array
   const coinsArray = Array.isArray(coins) ? coins : [coins];
 
   const clearingHouseState = await sdk.info.perpetuals.getClearinghouseState(
@@ -127,9 +129,15 @@ const updateLeverageAndPlaceOrder = async (
   stopLoss = normaliseDecimals(stopLoss, "px", coinMeta.szDecimals);
 
   // Ensure the order value meets the minimum requirement
-  const orderValue = size * entry; // Assuming entry price is in $
+  let orderValue = size * entry; // Assuming entry price is in $
   if (orderValue < MIN_ORDER_VALUE) {
-    return `Order value too small. Minimum required is $${MIN_ORDER_VALUE}. Current value: $${orderValue}`;
+    // Adjust size to meet the minimum order value
+    size = MIN_ORDER_VALUE / entry;
+    size = normaliseDecimals(size, "sz", coinMeta.szDecimals); // Normalize size
+    orderValue = size * entry; // Recalculate order value
+    if (orderValue < MIN_ORDER_VALUE) {
+      return `Order value too small even after adjustment. Minimum required is $${MIN_ORDER_VALUE}. Current value: $${orderValue}`;
+    }
   }
 
   const mainOrder = {
@@ -189,5 +197,4 @@ const updateLeverageAndPlaceOrder = async (
 
   return result.response.data.statuses[0];
 };
-
 export { closePositions, updateLeverageAndPlaceOrder };

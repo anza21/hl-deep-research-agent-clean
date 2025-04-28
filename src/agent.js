@@ -21,29 +21,48 @@ import fetch from "node-fetch";
 class HLDeepResearchAgent {
   constructor(agent, config) {
     this.config = { ...config, ...agent };
+    console.log("[DEBUG] Loaded Configuration File for Agent:", agent.agentId);
+    console.log("[DEBUG] Configuration Content:", this.config);
     this.runId = Date.now();
     this.agentId = agent.agentId;
     this.agentDataDir = path.join(config.agentDataDir, agent.agentId);
     if (!this.agentDataDir) throw new Error("Agent data directory is required");
     this.initAgentData();
   }
+
   async runOnce() {
     try {
       this.runId = Date.now();
+
+      // Φόρτωση δεδομένων για τον agent
       const agent = (await this.loadAgentData("", "config")) || this.config;
+
+      // Debugging log για τα δεδομένα του agent
+      console.log("[DEBUG] Loaded Agent Data:", agent);
+
       const lastRunId = agent.lastRunId || 0;
+
+      // Debugging logs
+      console.log("[DEBUG] Current Time (Date.now()):", Date.now());
+      console.log("[DEBUG] Last Run ID (lastRunId):", lastRunId);
+      console.log("[DEBUG] Trade Frequency (this.config.tradeFrequency):", this.config.tradeFrequency);
+
+      // Υπολογισμός για το αν πρέπει να τρέξει
       const shouldRun = Date.now() - (lastRunId + this.config.tradeFrequency);
+      console.log("[DEBUG] Should Run Calculation:", shouldRun);
+
+      // Έλεγχος αν δεν έχει περάσει αρκετός χρόνος
       if (shouldRun < 0) {
         console.log(`[${this.agentId}] Trade frequency not met, sleeping...`);
         return;
       }
 
+      // Εκκίνηση του loop
       await this.broadcast(
         `Beginning agent loop ${this.runId}...`,
         "INFO",
         true
       );
-
       const { direction, marketReasons } = await this.researchMarketBelief();
       const sectors = await this.researchSectors(direction, marketReasons);
 
@@ -370,7 +389,12 @@ class HLDeepResearchAgent {
         if (!Array.isArray(orders)) orders = [orders];
 
         for (const order of orders) {
+          // Debug log πριν την κλήση του placeOrders
+          console.log(`[DEBUG] Preparing to place order: ${JSON.stringify(order, null, 2)}`);
           const result = await tool.fn(order, this.agentId);
+          // Debug log μετά την κλήση του placeOrders
+          console.log(`[DEBUG] Result from placeOrders: ${JSON.stringify(result, null, 2)}`);
+
           if (tool_name === "placeOrders" && !result.error) {
             const orderId = result.filled?.oid || result.resting?.oid;
             const data =

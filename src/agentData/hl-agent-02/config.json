@@ -8,8 +8,8 @@
     "bot_token": "7860677219:AAH45FCH232UpmCbpIJs04sM_A3t-TJzwWM",
     "chat_id": "1993465148"
   },
-  "agentId": "hl-agent-01",
-  "agentName": "hyperistical",
+  "agentId": "hl-agent-02",
+  "agentName": "hyperlogical",
   "researchModel": "https://openrouter.ai/api/v1||gpt-3.5-turbo",
   "tradeModel": "https://openrouter.ai/api/v1||gpt-3.5-turbo",
   "sectors": [
@@ -19,7 +19,7 @@
     "defi"
   ],
   "persona": "I am a conservative professional crypto trader with years of experience in institutional trading. I prioritize risk management, thorough research, and sustainable long-term growth over quick profits. I make calculated decisions based on fundamental analysis and market trends.",
-  "tradeFrequency": 600000,
+  "tradeFrequency": 3600000,
   "researchParams": {
     "coinLookupLimit": 8,
     "identifyCoinLimit": 2,
@@ -30,5 +30,5 @@
   },
   "maxLeverage": 2,
   "minOrderSize": 20,
-  "lastRunId": 1745840329319
+  "lastRunId": 1745800000000
 }
