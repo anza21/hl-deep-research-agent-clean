@@ -27,7 +27,6 @@ class HLDeepResearchAgent {
     if (!this.agentDataDir) throw new Error("Agent data directory is required");
     this.initAgentData();
   }
-
   async runOnce() {
     try {
       this.runId = Date.now();
@@ -44,8 +43,10 @@ class HLDeepResearchAgent {
         "INFO",
         true
       );
+
       const { direction, marketReasons } = await this.researchMarketBelief();
       const sectors = await this.researchSectors(direction, marketReasons);
+
       for (let sector of sectors.children) {
         const name = sector.querySelector("name").textContent;
         const reasons = sector.querySelector("reasons").textContent;
@@ -53,8 +54,9 @@ class HLDeepResearchAgent {
         await this.trade(data, coinToPrice);
       }
 
-      agent.lastRunId = Date.now(); // update last run id
+      agent.lastRunId = Date.now();
       await this.storeAgentData("", "config", agent);
+
       this.broadcast(`---\nEnd of agent loop, entering sleep mode...`);
       return;
     } catch (error) {
@@ -62,8 +64,6 @@ class HLDeepResearchAgent {
       return;
     }
   }
-
-  // find market belief if long or short, reasons, and duration of applicability
   async researchMarketBelief() {
     this.broadcast("---\nResearching market belief...");
     const research_prompt = getPrompt("deepresearch-market", {});
@@ -84,14 +84,13 @@ class HLDeepResearchAgent {
     const direction = extractDOM(research, "direction");
     const marketReasons = extractDOM(research, "reasons");
     const marketApplicability = extractDOM(research, "applicability");
+
     this.broadcast(
       `Identified market belief: ${direction.textContent} (${marketApplicability.textContent} days), ${marketReasons.textContent}`
     );
 
     return { direction, marketReasons, marketApplicability };
   }
-
-  // find sectors that should align with market belief, reasons, and duration of applicability
   async researchSectors(direction, marketReasons) {
     this.broadcast("---\nResearching sectors...");
     const research_prompt = getPrompt("deepresearch-sectors", {
@@ -114,6 +113,7 @@ class HLDeepResearchAgent {
 
     const research = response.choices[0].message.content;
     const sectors = extractDOM(research, "sectors");
+
     let message = "Identified sectors: ";
     for (let sector of sectors.children) {
       const name = sector.querySelector("name").textContent;
@@ -124,20 +124,14 @@ class HLDeepResearchAgent {
 
     return sectors;
   }
-
-  // find coins for sector
   async research(sector) {
-    // fetch list of coins from hyperliquid sectors
-    // - filtered by volume threshold
-    // - sorted by funding rate difference
-    const volumeThreshold = 10000; // 10k
+    const volumeThreshold = 10000;
     const { coinToPrice, coinsByDiff } = await getCoinsByFundingRate(
       sector,
       volumeThreshold
     );
 
-    // convert to csv, limit to params.coinLookupLimit
-    let coinsTable = ["coin,price"]; // csv format for less tokens
+    let coinsTable = ["coin,price"];
     coinsByDiff
       .slice(0, this.config.researchParams.coinLookupLimit)
       .map((coin) => {
@@ -145,9 +139,6 @@ class HLDeepResearchAgent {
       });
     coinsTable = coinsTable.join("\n");
 
-    // fetch previous research from rag
-    // add today's price to the coins + change from timestamp to how long ago
-    // let LLM do its own reflection
     const rag =
       (await this.loadAgentData("deepresearch-coins", `${sector}`)) ?? "None";
     const ragData = [];
@@ -162,7 +153,6 @@ class HLDeepResearchAgent {
         const { runId, identified_coins, market_bias, market_bias_reason } =
           research;
 
-        // Calculate price changes for all coins
         let totalPriceChange = 0;
         identified_coins.forEach((coin) => {
           coin.old = coin.price;
@@ -174,7 +164,6 @@ class HLDeepResearchAgent {
           totalPriceChange += parseFloat(coin.price_change);
         });
 
-        // Format and add analysis data
         const avgPriceChange = (
           totalPriceChange / identified_coins.length
         ).toFixed(2);
@@ -205,13 +194,12 @@ class HLDeepResearchAgent {
         }
       }
     }
+
     if (ragData.length > 0) {
       this.broadcast(
         `---\nRetrieved previous research:\n${ragData.join("\n")}`
       );
     }
-
-    // batch research the coins with prompt
     const research_system = getPrompt("sys-deepresearch", {
       persona: this.config.persona,
       recentAnalysis: ragData.join("\n"),
@@ -238,10 +226,9 @@ class HLDeepResearchAgent {
       ],
       { retries: this.config.retryLimit }
     );
-    this.storeAgentData("logs", `deepresearch-sectors-${this.runId}`, response);
+    await this.storeAgentData("logs", `deepresearch-sectors-${this.runId}`, response);
 
     const research = response.choices[0].message.content;
-
     // add market bias research deepresearch to rag
     const market_bias = extract(research, "market_bias")[0];
     const market_bias_reason = extract(research, "market_bias_reason")[0];
@@ -275,34 +262,26 @@ class HLDeepResearchAgent {
 
     return { data, coinToPrice };
   }
-
   async trade(research, coinToPrice) {
-    // get rag data from deeptrade/placeOrders.json
     const ragData = [];
     const previousOrders = await this.loadAgentData("deeptrade", "placeOrders");
     if (previousOrders) {
       const historicalOrders = await getHistoricalOrders(this.agentId);
       let count = 0;
       for (const order of historicalOrders) {
-        if (!order.order.reduceOnly) continue; // only reduce only orders (stop loss and take profit)
-        if (order.status != "cancelled" && order.status != "triggered")
-          continue; // only cancelled or triggered orders
+        if (!order.order.reduceOnly) continue;
+        if (order.status !== "cancelled" && order.status !== "triggered") continue;
         if (count > this.config.tradeParams.orderLookupLimit) break;
+
         const o = order.order;
-        // Check if order ID exists in previousOrders
         if (!Object.keys(previousOrders).includes(o.oid.toString())) continue;
         const ago = convertTimestampToAgo(o.timestamp);
 
-        const { mainOrderEntry, orderType, reason, leverage } =
-          previousOrders[o.oid];
-
+        const { mainOrderEntry, orderType, reason, leverage } = previousOrders[o.oid];
         const { pnlPercent, pnlUsd } = calculateTPSLOrderPNL(o, mainOrderEntry);
 
         const price_now = coinToPrice[o.coin.replace("-PERP", "")];
-        const currentPriceDiff = (
-          ((price_now - o.triggerPx) / o.triggerPx) *
-          100
-        ).toFixed(2);
+        const currentPriceDiff = (((price_now - o.triggerPx) / o.triggerPx) * 100).toFixed(2);
 
         ragData.push(`${o.coin} ${leverage}x ${ago}`);
         ragData.push(`- Entry Price: ${mainOrderEntry}`);
@@ -313,32 +292,24 @@ class HLDeepResearchAgent {
         count++;
       }
     }
-    if (ragData.length > 0) {
-      this.broadcast(
-        `---\nRetrieved previous trades:\n${ragData.join("\n")}\n`
-      );
-    }
 
-    // reduce context window, only extract market_bias and coins from research
+    if (ragData.length > 0) {
+      this.broadcast(`---\nRetrieved previous trades:\n${ragData.join("\n")}\n`);
+    }
     const { market_bias, identified_coins } = research;
 
-    // fetch candles for each coin
     const candles = [];
     for (const coin of identified_coins) {
-      // Adjust candle interval and lookback period based on trading frequency
       const tradeFrequencyHours = this.config.tradeFrequency / 1000 / 60 / 60;
       const interval = tradeFrequencyHours <= 1 ? "15m" : "1h";
       const hoursAgo = tradeFrequencyHours <= 1 ? 2 : 24;
-      const candle = await getCandlesCSVLike(coin.coin, interval, hoursAgo); // this is a list of strings
+      const candle = await getCandlesCSVLike(coin.coin, interval, hoursAgo);
+
       candles.push(`${coin.coin} past ${hoursAgo}h (${interval} interval)`);
       candles.push(...candle);
       candles.push("");
     }
-
-    // fetch positions and open orders
-    const { clearingHouseState, openOrders } = await getOpenOrdersAndPositions(
-      this.agentId
-    );
+    const { clearingHouseState, openOrders } = await getOpenOrdersAndPositions(this.agentId);
     delete clearingHouseState.time;
     delete clearingHouseState.withdrawable;
     delete clearingHouseState.crossMarginSummary;
@@ -346,16 +317,12 @@ class HLDeepResearchAgent {
 
     const open_orders = openOrders;
     open_orders.forEach((order) => {
-      // B = Bid = Buy/Long, A = Ask = Short
       order.side = order.side === "B" ? "long" : "short";
-      order.type = Object.keys(order).includes("reduceOnly")
-        ? "TP/SL"
-        : "LIMIT";
+      order.type = Object.keys(order).includes("reduceOnly") ? "TP/SL" : "LIMIT";
       order.amount = order.sz;
       delete order.sz;
       delete order.timestamp;
     });
-
     const trade_tools = getSimpleTools(["trading"]);
     const trade_system = getPrompt("sys-deeptrade", {
       persona: this.config.persona,
@@ -389,15 +356,21 @@ class HLDeepResearchAgent {
       const tool_contents = extract(content, tool_name, {
         removeComments: true,
       });
-      if (tool_contents.length == 0) continue;
+      if (tool_contents.length === 0) continue;
       for (const _tool_content of tool_contents) {
         const tool_content = _tool_content.replaceAll("\n", "");
         this.broadcast(`Executing tool: ${tool_name}\n${tool_content}...`);
-        let orders = JSON.parse(tool_content);
+        let orders;
+        try {
+          orders = JSON.parse(tool_content);
+        } catch (error) {
+          console.error(`[${this.agentId}] Skipping invalid tool content: ${error.message}`);
+          continue; // Skip if JSON is broken
+        }
         if (!Array.isArray(orders)) orders = [orders];
+
         for (const order of orders) {
           const result = await tool.fn(order, this.agentId);
-          // if successfully placed order, store order data
           if (tool_name === "placeOrders" && !result.error) {
             const orderId = result.filled?.oid || result.resting?.oid;
             const data =
@@ -405,19 +378,12 @@ class HLDeepResearchAgent {
             const orderData = {
               coin: order.coin,
               leverage: order.leverage,
-              mainOrderEntry: order.entry, // limitPx
+              mainOrderEntry: order.entry,
               reason: order.reason,
             };
-            // order seqenece: mainOrder -> tpOrder -> slOrder (from function)
             data[orderId] = { ...orderData, orderType: "main" };
-            data[parseInt(orderId) + 1] = {
-              ...orderData,
-              orderType: "Take Profit",
-            };
-            data[parseInt(orderId) + 2] = {
-              ...orderData,
-              orderType: "Stop Loss",
-            };
+            data[parseInt(orderId) + 1] = { ...orderData, orderType: "Take Profit" };
+            data[parseInt(orderId) + 2] = { ...orderData, orderType: "Stop Loss" };
             await this.storeAgentData("deeptrade", `placeOrders`, data);
           }
         }
@@ -429,7 +395,6 @@ class HLDeepResearchAgent {
     if (!fs.existsSync(this.agentDataDir)) {
       fs.mkdirSync(this.agentDataDir, { recursive: true });
     }
-
     const configPath = path.join(this.agentDataDir, "config.json");
     if (!fs.existsSync(configPath)) {
       fs.writeFileSync(configPath, JSON.stringify(this.config, null, 2));
@@ -438,7 +403,6 @@ class HLDeepResearchAgent {
       const updatedConfig = { ...existingConfig, ...this.config };
       fs.writeFileSync(configPath, JSON.stringify(updatedConfig, null, 2));
     }
-
     const folders = [
       "deepresearch-sectors",
       "deepresearch-coins",
@@ -454,24 +418,21 @@ class HLDeepResearchAgent {
       if (!fs.existsSync(folderPath))
         fs.mkdirSync(folderPath, { recursive: true });
     });
-
     // limit every json in file of deepresearch-coins to only have 50 entries
     const deepresearchCoinsDir = path.join(baseDir, "deepresearch-coins");
     const files = fs.readdirSync(deepresearchCoinsDir);
     files.forEach((file) => {
       const filePath = path.join(deepresearchCoinsDir, file);
       const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
-      data.slice(0, 50);
-      fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+      const limitedData = data.slice(0, 50);
+      fs.writeFileSync(filePath, JSON.stringify(limitedData, null, 2));
     });
 
     return baseDir;
   }
-
   async storeAgentData(folder, filename, data) {
     const filePath = path.join(this.agentDataDir, folder, `${filename}.json`);
     try {
-      // Create the directory if it doesn't exist
       const dirPath = path.dirname(filePath);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
@@ -481,7 +442,6 @@ class HLDeepResearchAgent {
       console.error(`Error writing data file: ${e.message}`);
     }
   }
-
   async loadAgentData(folder, filename) {
     const filePath = path.join(this.agentDataDir, folder, `${filename}.json`);
     if (!fs.existsSync(filePath)) return null;
@@ -494,7 +454,6 @@ class HLDeepResearchAgent {
       return null;
     }
   }
-
   async broadcast(message, type = "INFO", newMessage = false) {
     console.log(`[${this.config.agentId}] ${type} : ${message}`);
     await this.writeDiary(message);
@@ -510,11 +469,7 @@ class HLDeepResearchAgent {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               chat_id: process.env.TELEGRAM_CHAT_ID,
-              text:
-                messageTitle +
-                "<blockquote>" +
-                this.telegramMessage +
-                "</blockquote>",
+              text: messageTitle + "<blockquote>" + this.telegramMessage + "</blockquote>",
               parse_mode: "HTML",
             }),
           });
@@ -528,11 +483,7 @@ class HLDeepResearchAgent {
             body: JSON.stringify({
               chat_id: process.env.TELEGRAM_CHAT_ID,
               message_id: this.telegramMessageId,
-              text:
-                messageTitle +
-                "<blockquote>" +
-                this.telegramMessage +
-                "</blockquote>",
+              text: messageTitle + "<blockquote>" + this.telegramMessage + "</blockquote>",
               parse_mode: "HTML",
             }),
           });
@@ -542,18 +493,17 @@ class HLDeepResearchAgent {
       }
     }
   }
-
   async writeDiary(message) {
     const data = (await this.loadAgentData("diary", "diary")) || {};
     const today = new Date().toLocaleDateString("en-GB");
     if (!data[today]) data[today] = [];
     data[today].push(message);
-    const sevenDaysAgo = new Date(
-      Date.now() - 7 * 24 * 60 * 60 * 1000
-    ).toLocaleDateString("en-GB");
+
+    const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toLocaleDateString("en-GB");
     for (const key in data) {
       if (key < sevenDaysAgo) delete data[key];
     }
+
     await this.storeAgentData("diary", "diary", data);
   }
 }

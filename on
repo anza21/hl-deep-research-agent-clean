@@ -1,0 +1,204 @@
+[35m.gitignore[m[36m:[m# Agent [1;31msecret[m
+[35m.gitignore[m[36m:[magent[1;31mSecret[m.json
+[35mpackage-lock.json[m[36m:[m        "@csstools/css-[1;31mtoken[mizer": "^3.0.3",
+[35mpackage-lock.json[m[36m:[m        "@csstools/css-[1;31mtoken[mizer": "^3.0.3"
+[35mpackage-lock.json[m[36m:[m        "@csstools/css-[1;31mtoken[mizer": "^3.0.3"
+[35mpackage-lock.json[m[36m:[m        "@csstools/css-[1;31mtoken[mizer": "^3.0.3"
+[35mpackage-lock.json[m[36m:[m    "node_modules/@csstools/css-[1;31mtoken[mizer": {
+[35mpackage-lock.json[m[36m:[m      "resolved": "https://registry.npmjs.org/@csstools/css-[1;31mtoken[mizer/-/css-[1;31mtoken[mizer-3.0.3.tgz",
+[35mpackage.json[m[36m:[m  "[1;31mprivate[m": true,
+[35mpnpm-lock.yaml[m[36m:[m      '@csstools/css-[1;31mtoken[mizer': ^3.0.3
+[35mpnpm-lock.yaml[m[36m:[m      '@csstools/css-[1;31mtoken[mizer': ^3.0.3
+[35mpnpm-lock.yaml[m[36m:[m      '@csstools/css-[1;31mtoken[mizer': ^3.0.3
+[35mpnpm-lock.yaml[m[36m:[m  '@csstools/css-[1;31mtoken[mizer@3.0.3':
+[35mpnpm-lock.yaml[m[36m:[m      '@csstools/css-calc': 2.1.2(@csstools/css-parser-algorithms@3.0.4(@csstools/css-[1;31mtoken[mizer@3.0.3))(@csstools/css-[1;31mtoken[mizer@3.0.3)
+[35mpnpm-lock.yaml[m[36m:[m      '@csstools/css-color-parser': 3.0.8(@csstools/css-parser-algorithms@3.0.4(@csstools/css-[1;31mtoken[mizer@3.0.3))(@csstools/css-[1;31mtoken[mizer@3.0.3)
+[35mpnpm-lock.yaml[m[36m:[m      '@csstools/css-parser-algorithms': 3.0.4(@csstools/css-[1;31mtoken[mizer@3.0.3)
+[35mpnpm-lock.yaml[m[36m:[m      '@csstools/css-[1;31mtoken[mizer': 3.0.3
+[35mpnpm-lock.yaml[m[36m:[m  '@csstools/css-calc@2.1.2(@csstools/css-parser-algorithms@3.0.4(@csstools/css-[1;31mtoken[mizer@3.0.3))(@csstools/css-[1;31mtoken[mizer@3.0.3)':
+[35mpnpm-lock.yaml[m[36m:[m      '@csstools/css-parser-algorithms': 3.0.4(@csstools/css-[1;31mtoken[mizer@3.0.3)
+[35mpnpm-lock.yaml[m[36m:[m      '@csstools/css-[1;31mtoken[mizer': 3.0.3
+[35mpnpm-lock.yaml[m[36m:[m  '@csstools/css-color-parser@3.0.8(@csstools/css-parser-algorithms@3.0.4(@csstools/css-[1;31mtoken[mizer@3.0.3))(@csstools/css-[1;31mtoken[mizer@3.0.3)':
+[35mpnpm-lock.yaml[m[36m:[m      '@csstools/css-calc': 2.1.2(@csstools/css-parser-algorithms@3.0.4(@csstools/css-[1;31mtoken[mizer@3.0.3))(@csstools/css-[1;31mtoken[mizer@3.0.3)
+[35mpnpm-lock.yaml[m[36m:[m      '@csstools/css-parser-algorithms': 3.0.4(@csstools/css-[1;31mtoken[mizer@3.0.3)
+[35mpnpm-lock.yaml[m[36m:[m      '@csstools/css-[1;31mtoken[mizer': 3.0.3
+[35mpnpm-lock.yaml[m[36m:[m  '@csstools/css-parser-algorithms@3.0.4(@csstools/css-[1;31mtoken[mizer@3.0.3)':
+[35mpnpm-lock.yaml[m[36m:[m      '@csstools/css-[1;31mtoken[mizer': 3.0.3
+[35mpnpm-lock.yaml[m[36m:[m  '@csstools/css-[1;31mtoken[mizer@3.0.3': {}
+[35msrc/agent.js[m[36m:[m    let coinsTable = ["coin,price"]; // csv format for less [1;31mtoken[ms
+[35msrc/agent.js[m[36m:[m        if (!Object.[1;31mkey[ms(previousOrders).includes(o.oid.toString())) continue;
+[35msrc/agent.js[m[36m:[m      order.type = Object.[1;31mkey[ms(order).includes("reduceOnly")
+[35msrc/agent.js[m[36m:[m      const telegramApiUrl = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_[1;31mTOKEN[m}`;
+[35msrc/agent.js[m[36m:[m    for (const [1;31mkey[m in data) {
+[35msrc/agent.js[m[36m:[m      if ([1;31mkey[m < sevenDaysAgo) delete data[[1;31mkey[m];
+[35msrc/agentData/hl-agent-01/deepresearch-coins/ai.json[m[36m:[m        "analysis": "FET has solid use-case in AI-driven decentralized computing, recent partnerships expanding its ecosystem, [1;31mtoken[momics promising for growth"
+[35msrc/agentData/hl-agent-01/diary/diary.json[m[36m:[m    "Identified market belief: short (14 days days), The recent downtrend in global equity markets could lead to increased selling pressure in the crypto markets; negative sentiment on social media platforms; [1;31mtoken[m fundamentals showing lackluster community sentiment and few positive developments",
+[35msrc/agentData/hl-agent-01/diary/diary.json[m[36m:[m    "Identified market bias: SIGHTLY_LONG ai, market buzz says AI integration accelerating across industries, bullish on AI-focused coins, but wa....\n- FET-PERP: $0.74538, FET has solid use-case in AI-driven decentralized computing, recent partnerships expanding its ecosystem, [1;31mtoken[momics promising for growth\n- NEAR-PERP: $2.52925, NEAR integrating AI for scalability solutions, strong community support, upcoming developments hint at potential price surge",
+[35msrc/agentData/hl-agent-01/diary/diary.json[m[36m:[m    "Identified market belief: short (30 days days), 1. The recent crackdown on cryptocurrency mining in China has caused a significant drop in mining activity and trading volume, leading to bearish sentiment in the market.\n2. Negative regulatory news from various countries, such as India and Tur[1;31mkey[m, have further fueled fears of a regulatory crackdown on cryptocurrencies.\n3. The overall market sentiment remains cautious and risk-averse, as investors are worried about the potential impact of inflation and rising interest rates on the cryptocurrency market.",
+[35msrc/agentData/hl-agent-01/diary/diary.json[m[36m:[m    "Identified market belief: short (30 days days), 1. Macro factors such as rising inflation and potential interest rate hikes may lead to a risk-off environment, causing investors to pull out of riskier assets like cryptocurrencies.\n2. Social sentiment on Twitter and forums is currently mixed, with a noticeable increase in FUD (Fear, Uncertainty, Doubt) surrounding regulatory crackdowns and market manipulation.\n3. [1;31mToken[m fundamentals for many listed coins show a lack of significant positive developments, with some projects facing challenges with [1;31mtoken[m distribution and community engagement.",
+[35msrc/agentData/hl-agent-01/diary/diary.json[m[36m:[m    "Identified market belief: short (30 days days), The overall macroeconomic environment is unstable, with rising inflation and potential interest rate hikes leading to market uncertainty. Social sentiment on platforms like Twitter and forums is increasingly bearish, with concerns about regulatory crackdowns and negative news impacting prices. [1;31mToken[m fundamentals for many listed coins show overinflated valuations, lack of real-world utility, and high concentration of [1;31mtoken[ms in the hands of a few holders.",
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745765970919.json[m[36m:[m        "content": "<direction>short</direction>\n<reasons>The recent downtrend in global equity markets could lead to increased selling pressure in the crypto markets; negative sentiment on social media platforms; [1;31mtoken[m fundamentals showing lackluster community sentiment and few positive developments</reasons>\n<applicability>14 days</applicability>",
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745765970919.json[m[36m:[m    "prompt_[1;31mtoken[ms": 161,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745765970919.json[m[36m:[m    "completion_[1;31mtoken[ms": 65,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745765970919.json[m[36m:[m    "total_[1;31mtoken[ms": 226,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745765970919.json[m[36m:[m    "prompt_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745765970919.json[m[36m:[m      "cached_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745765970919.json[m[36m:[m    "completion_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745765970919.json[m[36m:[m      "reasoning_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766079942.json[m[36m:[m    "prompt_[1;31mtoken[ms": 161,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766079942.json[m[36m:[m    "completion_[1;31mtoken[ms": 92,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766079942.json[m[36m:[m    "total_[1;31mtoken[ms": 253,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766079942.json[m[36m:[m    "prompt_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766079942.json[m[36m:[m      "cached_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766079942.json[m[36m:[m    "completion_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766079942.json[m[36m:[m      "reasoning_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766236358.json[m[36m:[m        "content": "<direction>short</direction>\n<reasons>1. The recent crackdown on cryptocurrency mining in China has caused a significant drop in mining activity and trading volume, leading to bearish sentiment in the market.\n2. Negative regulatory news from various countries, such as India and Tur[1;31mkey[m, have further fueled fears of a regulatory crackdown on cryptocurrencies.\n3. The overall market sentiment remains cautious and risk-averse, as investors are worried about the potential impact of inflation and rising interest rates on the cryptocurrency market.</reasons>\n<applicability>30 days</applicability>",
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766236358.json[m[36m:[m    "prompt_[1;31mtoken[ms": 161,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766236358.json[m[36m:[m    "completion_[1;31mtoken[ms": 116,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766236358.json[m[36m:[m    "total_[1;31mtoken[ms": 277,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766236358.json[m[36m:[m    "prompt_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766236358.json[m[36m:[m      "cached_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766236358.json[m[36m:[m    "completion_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766236358.json[m[36m:[m      "reasoning_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766377471.json[m[36m:[m        "content": "<direction>short</direction>\n<reasons>1. Macro factors such as rising inflation and potential interest rate hikes may lead to a risk-off environment, causing investors to pull out of riskier assets like cryptocurrencies.\n2. Social sentiment on Twitter and forums is currently mixed, with a noticeable increase in FUD (Fear, Uncertainty, Doubt) surrounding regulatory crackdowns and market manipulation.\n3. [1;31mToken[m fundamentals for many listed coins show a lack of significant positive developments, with some projects facing challenges with [1;31mtoken[m distribution and community engagement.</reasons>\n<applicability>30 days</applicability>",
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766377471.json[m[36m:[m    "prompt_[1;31mtoken[ms": 161,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766377471.json[m[36m:[m    "completion_[1;31mtoken[ms": 124,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766377471.json[m[36m:[m    "total_[1;31mtoken[ms": 285,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766377471.json[m[36m:[m    "prompt_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766377471.json[m[36m:[m      "cached_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766377471.json[m[36m:[m    "completion_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766377471.json[m[36m:[m      "reasoning_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766508224.json[m[36m:[m        "content": "<direction>short</direction>\n<reasons>The overall macroeconomic environment is unstable, with rising inflation and potential interest rate hikes leading to market uncertainty. Social sentiment on platforms like Twitter and forums is increasingly bearish, with concerns about regulatory crackdowns and negative news impacting prices. [1;31mToken[m fundamentals for many listed coins show overinflated valuations, lack of real-world utility, and high concentration of [1;31mtoken[ms in the hands of a few holders.</reasons>\n<applicability>30 days</applicability>",
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766508224.json[m[36m:[m    "prompt_[1;31mtoken[ms": 161,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766508224.json[m[36m:[m    "completion_[1;31mtoken[ms": 105,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766508224.json[m[36m:[m    "total_[1;31mtoken[ms": 266,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766508224.json[m[36m:[m    "prompt_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766508224.json[m[36m:[m      "cached_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766508224.json[m[36m:[m    "completion_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-market-1745766508224.json[m[36m:[m      "reasoning_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745765970919.json[m[36m:[m        "content": "<market_bias>sightly_long</market_bias>\n<market_bias_reason>market buzz says AI integration accelerating across industries, bullish on AI-focused coins, but watch market volatility closely for entry points</market_bias_reason>\n<identified_coins>\n[{\"coin\":\"FET-PERP\",\"price\":\"0.74538\",\"bias\":\"long\",\"analysis\":\"FET has solid use-case in AI-driven decentralized computing, recent partnerships expanding its ecosystem, [1;31mtoken[momics promising for growth\"},\n{\"coin\":\"NEAR-PERP\",\"price\":\"2.52925\",\"bias\":\"long\",\"analysis\":\"NEAR integrating AI for scalability solutions, strong community support, upcoming developments hint at potential price surge\"}]\n</identified_coins>",
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745765970919.json[m[36m:[m    "prompt_[1;31mtoken[ms": 461,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745765970919.json[m[36m:[m    "completion_[1;31mtoken[ms": 142,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745765970919.json[m[36m:[m    "total_[1;31mtoken[ms": 603,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745765970919.json[m[36m:[m    "prompt_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745765970919.json[m[36m:[m      "cached_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745765970919.json[m[36m:[m    "completion_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745765970919.json[m[36m:[m      "reasoning_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766079942.json[m[36m:[m    "prompt_[1;31mtoken[ms": 459,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766079942.json[m[36m:[m    "completion_[1;31mtoken[ms": 159,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766079942.json[m[36m:[m    "total_[1;31mtoken[ms": 618,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766079942.json[m[36m:[m    "prompt_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766079942.json[m[36m:[m      "cached_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766079942.json[m[36m:[m    "completion_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766079942.json[m[36m:[m      "reasoning_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766236358.json[m[36m:[m    "prompt_[1;31mtoken[ms": 131,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766236358.json[m[36m:[m    "completion_[1;31mtoken[ms": 72,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766236358.json[m[36m:[m    "total_[1;31mtoken[ms": 203,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766236358.json[m[36m:[m    "prompt_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766236358.json[m[36m:[m      "cached_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766236358.json[m[36m:[m    "completion_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766236358.json[m[36m:[m      "reasoning_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766377471.json[m[36m:[m    "prompt_[1;31mtoken[ms": 131,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766377471.json[m[36m:[m    "completion_[1;31mtoken[ms": 74,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766377471.json[m[36m:[m    "total_[1;31mtoken[ms": 205,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766377471.json[m[36m:[m    "prompt_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766377471.json[m[36m:[m      "cached_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766377471.json[m[36m:[m    "completion_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766377471.json[m[36m:[m      "reasoning_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766508224.json[m[36m:[m    "prompt_[1;31mtoken[ms": 131,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766508224.json[m[36m:[m    "completion_[1;31mtoken[ms": 49,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766508224.json[m[36m:[m    "total_[1;31mtoken[ms": 180,
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766508224.json[m[36m:[m    "prompt_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766508224.json[m[36m:[m      "cached_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766508224.json[m[36m:[m    "completion_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deepresearch-sectors-1745766508224.json[m[36m:[m      "reasoning_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745765970919.json[m[36m:[m        "content": "<closePositions>[{'coin': 'FET-PERP'}, {'coin': 'NEAR-PERP'}]</closePositions>\n\n<placeOrders>[{'coin': 'FET-PERP', 'side': 'long', 'leverage': '2', 'entry': '0.783', 'takeProfit': '0.805', 'stopLoss': '0.769', 'size': '0.002', 'reason': 'FET has a solid use-case in AI-driven decentralized computing, recent partnerships expanding its ecosystem, and promising [1;31mtoken[momics for growth. Market bias is slightly long.'}, {'coin': 'NEAR-PERP', 'side': 'long', 'leverage': '2', 'entry': '2.605', 'takeProfit': '2.650', 'stopLoss': '2.585', 'size': '1', 'reason': 'NEAR integrating AI for scalability solutions, strong community support, and upcoming developments hint at a potential price surge. Market bias is slightly long.'}]</placeOrders>",
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745765970919.json[m[36m:[m    "prompt_[1;31mtoken[ms": 1897,
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745765970919.json[m[36m:[m    "completion_[1;31mtoken[ms": 215,
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745765970919.json[m[36m:[m    "total_[1;31mtoken[ms": 2112,
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745765970919.json[m[36m:[m    "prompt_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745765970919.json[m[36m:[m      "cached_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745765970919.json[m[36m:[m    "completion_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745765970919.json[m[36m:[m      "reasoning_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766079942.json[m[36m:[m    "prompt_[1;31mtoken[ms": 1808,
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766079942.json[m[36m:[m    "completion_[1;31mtoken[ms": 206,
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766079942.json[m[36m:[m    "total_[1;31mtoken[ms": 2014,
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766079942.json[m[36m:[m    "prompt_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766079942.json[m[36m:[m      "cached_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766079942.json[m[36m:[m    "completion_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766079942.json[m[36m:[m      "reasoning_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766236358.json[m[36m:[m    "prompt_[1;31mtoken[ms": 1867,
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766236358.json[m[36m:[m    "completion_[1;31mtoken[ms": 164,
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766236358.json[m[36m:[m    "total_[1;31mtoken[ms": 2031,
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766236358.json[m[36m:[m    "prompt_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766236358.json[m[36m:[m      "cached_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766236358.json[m[36m:[m    "completion_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766236358.json[m[36m:[m      "reasoning_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766377471.json[m[36m:[m    "prompt_[1;31mtoken[ms": 1867,
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766377471.json[m[36m:[m    "completion_[1;31mtoken[ms": 177,
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766377471.json[m[36m:[m    "total_[1;31mtoken[ms": 2044,
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766377471.json[m[36m:[m    "prompt_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766377471.json[m[36m:[m      "cached_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766377471.json[m[36m:[m    "completion_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766377471.json[m[36m:[m      "reasoning_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766508224.json[m[36m:[m    "prompt_[1;31mtoken[ms": 1865,
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766508224.json[m[36m:[m    "completion_[1;31mtoken[ms": 195,
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766508224.json[m[36m:[m    "total_[1;31mtoken[ms": 2060,
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766508224.json[m[36m:[m    "prompt_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766508224.json[m[36m:[m      "cached_[1;31mtoken[ms": 0
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766508224.json[m[36m:[m    "completion_[1;31mtoken[ms_details": {
+[35msrc/agentData/hl-agent-01/logs/deeptrade-1745766508224.json[m[36m:[m      "reasoning_[1;31mtoken[ms": 0
+[35msrc/agentSecret.json.example[m[36m:[m    "[1;31mprivate[m[1;31mKey[m": "0x...",
+[35msrc/agentSecret.json.example[m[36m:[m    "[1;31mprivate[m[1;31mKey[mTestnet": "0x..."
+[35msrc/agentSecret.json.example[m[36m:[m    "[1;31mprivate[m[1;31mKey[m": "0x...",
+[35msrc/agentSecret.json.example[m[36m:[m    "[1;31mprivate[m[1;31mKey[mTestnet": "0x..."
+[35msrc/api/hyperliquid/exchange.js[m[36m:[m    sdk.custom.[1;31mwallet[mAddress
+[35msrc/api/hyperliquid/exchange.js[m[36m:[m    sdk.custom.[1;31mwallet[mAddress,
+[35msrc/api/hyperliquid/exchange.js[m[36m:[m    sdk.custom.[1;31mwallet[mAddress
+[35msrc/api/hyperliquid/info.js[m[36m:[m    sdk.custom.[1;31mwallet[mAddress
+[35msrc/api/hyperliquid/info.js[m[36m:[m    sdk.custom.[1;31mwallet[mAddress
+[35msrc/api/hyperliquid/info.js[m[36m:[m    sdk.custom.[1;31mwallet[mAddress
+[35msrc/api/hyperliquid/init.js[m[36m:[mconst agent[1;31mSecret[m = JSON.parse(
+[35msrc/api/hyperliquid/init.js[m[36m:[m  readFileSync(resolve(__dirname, "..", "..", "agent[1;31mSecret[m.json"), "utf-8")
+[35msrc/api/hyperliquid/init.js[m[36m:[m  const [1;31msecret[ms = agent[1;31mSecret[m[agentId];
+[35msrc/api/hyperliquid/init.js[m[36m:[m  if (![1;31msecret[ms) {
+[35msrc/api/hyperliquid/init.js[m[36m:[m    throw new Error(`[1;31mSecret[ms not provided for ${agentId}`);
+[35msrc/api/hyperliquid/init.js[m[36m:[m  const [1;31mprivate[m[1;31mKey[m =
+[35msrc/api/hyperliquid/init.js[m[36m:[m      ? [1;31msecret[ms.[1;31mprivate[m[1;31mKey[m
+[35msrc/api/hyperliquid/init.js[m[36m:[m      : [1;31msecret[ms.[1;31mprivate[m[1;31mKey[mTestnet;
+[35msrc/api/hyperliquid/init.js[m[36m:[m  const [1;31mwallet[mAddress = [1;31msecret[ms.accountAddress;
+[35msrc/api/hyperliquid/init.js[m[36m:[m  if (![1;31mprivate[m[1;31mKey[m || ![1;31mwallet[mAddress)
+[35msrc/api/hyperliquid/init.js[m[36m:[m    [1;31mprivate[m[1;31mKey[m,
+[35msrc/api/hyperliquid/init.js[m[36m:[m    [1;31mwallet[mAddress,
+[35msrc/api/telegram.js[m[36m:[m  const [1;31mtoken[m = process.env.TELEGRAM_BOT_[1;31mTOKEN[m;
+[35msrc/api/telegram.js[m[36m:[m  const url = `https://api.telegram.org/bot${[1;31mtoken[m}/sendMessage?chat_id=${chatId}&text=${text}&disable_web_page_preview=${no_webpage}&parse_mode=HTML`;
+[35msrc/prompt/deepresearch-market.json[m[36m:[m    "3. Assess [1;31mtoken[m fundamentals for listed coins:",
+[35msrc/prompt/deepresearch-market.json[m[36m:[m    "   - [1;31mToken[m distribution",
+[35msrc/prompt/deepresearch.json[m[36m:[m    "3. Assess [1;31mtoken[m fundamentals for listed coins:",
+[35msrc/prompt/deepresearch.json[m[36m:[m    "   - [1;31mToken[m distribution",
+[35msrc/prompt/sys-deepresearch.json[m[36m:[m    "4. Assess [1;31mtoken[m fundamentals for listed coins:",
+[35msrc/prompt/sys-deepresearch.json[m[36m:[m    "   - [1;31mToken[m distribution",
+[35msrc/utils.js[m[36m:[m  const api[1;31mKey[m = process.env.OPENROUTER_API_[1;31mKEY[m;
+[35msrc/utils.js[m[36m:[m  if (!api[1;31mKey[m) {
+[35msrc/utils.js[m[36m:[m    throw new Error("Missing OpenRouter API [1;31mkey[m!");
+[35msrc/utils.js[m[36m:[m          Authorization: `Bearer ${api[1;31mKey[m}`,
+[35mwebserver/hyperliquid-api.js[m[36m:[mexport const getHyperliquidData = async ([1;31mwallet[mAddress) => {
+[35mwebserver/hyperliquid-api.js[m[36m:[m  const userAddress = [1;31mwallet[mAddress;
+[35mwebserver/middleware.js[m[36m:[m  res.header("Access-Control-Allow-Headers", "Content-Type, X-API-[1;31mKey[m");
+[35mwebserver/middleware.js[m[36m:[m    const headerApi[1;31mKey[m = req.headers["x-api-[1;31mkey[m"];
+[35mwebserver/middleware.js[m[36m:[m    const queryApi[1;31mKey[m = req.query.api[1;31mKey[m;
+[35mwebserver/middleware.js[m[36m:[m      headerApi[1;31mKey[m !== process.env.WEBSERVER_API_[1;31mKEY[m &&
+[35mwebserver/middleware.js[m[36m:[m      queryApi[1;31mKey[m !== process.env.WEBSERVER_API_[1;31mKEY[m
+[35mwebserver/routes.js[m[36m:[mconst agent[1;31mSecret[m = JSON.parse(
+[35mwebserver/routes.js[m[36m:[m  readFileSync(resolve(__dirname, "..", "src", "agent[1;31mSecret[m.json"), "utf-8")
+[35mwebserver/routes.js[m[36m:[m    // Find the latest date ([1;31mkey[ms are in DD/MM/YYYY format)
+[35mwebserver/routes.js[m[36m:[m    const dates = Object.[1;31mkey[ms(diaryData).sort((a, b) => {
+[35mwebserver/routes.js[m[36m:[m      await getHyperliquidData(agent[1;31mSecret[m[agentId].accountAddress);
+[35mwebserver/routes.js[m[36m:[m      [1;31mwallet[m_address: agent[1;31mSecret[m[agentId].accountAddress,
+[35mwebserver/test_api.js[m[36m:[m  for (const [[1;31mkey[m, value] of Object.entries(headers)) {
+[35mwebserver/test_api.js[m[36m:[m    curlCmd += ` \\\n  -H "${[1;31mkey[m}: ${value}"`;
+[35mwebserver/test_api.js[m[36m:[m    "x-api-[1;31mkey[m": process.env.WEBSERVER_API_[1;31mKEY[m,
+[35mwebserver/test_api.js[m[36m:[m      Object.[1;31mkey[ms(body).length > 0 ? body : null
+[35mwebserver/test_api.js[m[36m:[m  console.log(`- ${url}/test-results?api[1;31mKey[m=${process.env.WEBSERVER_API_[1;31mKEY[m}`);
+[35mwebserver/test_api.js[m[36m:[m  const endpointNames = Object.[1;31mkey[ms(testResults).filter(
+[35mwebserver/test_api.js[m[36m:[m    ([1;31mkey[m) => [1;31mkey[m !== "lastRun" && [1;31mkey[m !== "curlCommands"
