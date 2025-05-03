@@ -21,4 +21,6 @@ fly.toml
 fly-deploy.sh
 ecosystem.config.cjs
 .dockerignore
-Dockerfile
+Dockerfiledebug.log
+src/close_all_positions.js
+src/close_positions.js
