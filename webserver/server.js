@@ -27,13 +27,23 @@ const __dirname = dirname(__filename);
 dotenv.config();
 const hostname =
   process.env.NODE_ENV === "production" ? "0.0.0.0" : "localhost";
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8081;
 
 const app = express();
 app.use(express.json());
 
 app.use(requestLogger);
 app.use(corsMiddleware);
+
+// Διαχείριση για το /favicon.ico
+app.get("/favicon.ico", (req, res) => {
+  res.status(204).end(); // Επιστρέφουμε No Content
+});
+
+// Διαχείριση για το /ws/ws
+app.get("/ws/ws", (req, res) => {
+  res.status(200).send("WebSocket endpoint not implemented yet.");
+});
 
 // Routes that need authentication
 app.get("/health", authMiddleware, healthHandler);

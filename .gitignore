@@ -24,3 +24,25 @@ ecosystem.config.cjs
 Dockerfiledebug.log
 src/close_all_positions.js
 src/close_positions.js
+
+# Sensitive files
+src/agentSecret.json
+src/agentSecret.json.example
+src/agentSecret.example.json
+src/agentConfig.json
+src/agentConfig.jsony
+
+# Logs
+*.log
+src/agentData/*/logs/
+
+# Node modules
+node_modules/
+
+# Data
+src/agentData/*/deeptrade/
+src/agentData/*/deepresearch-*/
+src/agentData/*/diary/
+
+# Lock files (choose one package manager, here npm)
+pnpm-lock.yaml

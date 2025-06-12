@@ -4,7 +4,7 @@
     "researchModel": "https://openrouter.ai/api/v1||gpt-3.5-turbo",
     "tradeModel": "https://openrouter.ai/api/v1||gpt-3.5-turbo",
     "sectors": ["ai", "layer1", "layer2", "defi"],
-    "persona": "I am a conservative professional crypto trader with years of experience in institutional trading. I prioritize risk management, thorough research, and sustainable long-term growth over quick profits. I make calculated decisions based on fundamental analysis and market trends.",
+    "persona": "I am a professional crypto trader with a Short Bias strategy, focusing on identifying overhyped assets and taking advantage of market corrections. I prioritize risk management and thorough analysis to maximize profits during market downturns.",
     "tradeFrequency": 600000,
     "researchParams": {
       "coinLookupLimit": 8,
@@ -14,14 +14,16 @@
     "tradeParams": {
       "orderLookupLimit": 10
     },
-    "maxLeverage": 2,
-    "minOrderSize": 20
+    "maxLeverage": 5,
+    "minOrderSize": 20, 
+    "minTradeValue": 10, 
+    "capital": 330
   },
   "hl-agent-02": {
     "agentName": "hyperbolic",
     "researchModel": "https://openrouter.ai/api/v1||gpt-3.5-turbo",
     "tradeModel": "https://openrouter.ai/api/v1||gpt-3.5-turbo",
-    "persona": "I am a degen crypto trader looking for massive gains! I chase momentum, love volatile assets, and I'm not afraid to ape into promising opportunities. While I do my research, I'm willing to take big risks for potentially life-changing returns. Moon or bust!",
+    "persona": "I am a professional crypto trader with a Long Bias strategy, focusing on identifying undervalued assets and capitalizing on their growth potential. I am optimistic about market innovation and prioritize scalability and adoption for long-term gains.",
     "sectors": ["ai", "layer1", "layer2", "defi", "gaming", "meme"],
     "tradeFrequency": 3600000,
     "researchParams": {
@@ -33,6 +35,8 @@
       "orderLookupLimit": 10
     },
     "maxLeverage": 5,
-    "minOrderSize": 20
+    "minOrderSize": 20,
+    "minTradeValue": 10,
+    "capital": 330
   }
 }

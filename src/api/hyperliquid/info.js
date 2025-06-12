@@ -5,7 +5,8 @@ const getCoinsByFundingRate = async (sector, minVolume) => {
   const sdk = Object.values(sdkAgents)[0];
   const metadata = await sdk.info.perpetuals.getMetaAndAssetCtxs();
 
-  const coins = sectors[sector].map((coin) => `${coin}-PERP`);
+  // Έλεγχος αν το sector υπάρχει και είναι πίνακας (array)
+  const coins = Array.isArray(sectors[sector]) ? sectors[sector].map((coin) => `${coin}-PERP`) : [];
 
   const coinsByFundingPositive = [];
   const coinsByFundingNegative = [];
@@ -27,15 +28,11 @@ const getCoinsByFundingRate = async (sector, minVolume) => {
 
         // Sort into positive or negative funding arrays
         if (coinToFunding[coinName] > 0) {
-          // Insert into positive funding array in sorted order
           let low = 0;
           let high = coinsByFundingPositive.length;
           while (low < high) {
             const mid = Math.floor((low + high) / 2);
-            if (
-              coinToFunding[coinName] >
-              coinToFunding[coinsByFundingPositive[mid]]
-            ) {
+            if (coinToFunding[coinName] > coinToFunding[coinsByFundingPositive[mid]]) {
               high = mid;
             } else {
               low = mid + 1;
@@ -43,16 +40,11 @@ const getCoinsByFundingRate = async (sector, minVolume) => {
           }
           coinsByFundingPositive.splice(low, 0, coinName);
         } else {
-          // Insert into negative funding array in sorted order
           let low = 0;
           let high = coinsByFundingNegative.length;
           while (low < high) {
-            // Fixed the condition here (was low <= high)
             const mid = Math.floor((low + high) / 2);
-            if (
-              coinToFunding[coinName] <
-              coinToFunding[coinsByFundingNegative[mid]]
-            ) {
+            if (coinToFunding[coinName] < coinToFunding[coinsByFundingNegative[mid]]) {
               high = mid;
             } else {
               low = mid + 1;

@@ -14,9 +14,7 @@
   "tradeModel": "https://openrouter.ai/api/v1||gpt-3.5-turbo",
   "sectors": [
     "ai",
-    "layer1",
-    "layer2",
-    "defi"
+    "meme"
   ],
   "persona": "I am a conservative professional crypto trader with years of experience in institutional trading. I prioritize risk management, thorough research, and sustainable long-term growth over quick profits. I make calculated decisions based on fundamental analysis and market trends.",
   "tradeFrequency": 600000,
@@ -28,7 +26,8 @@
   "tradeParams": {
     "orderLookupLimit": 10
   },
-  "maxLeverage": 2,
+  "maxLeverage": 10,
   "minOrderSize": 20,
-  "lastRunId": 1745840329319
+  "lastRunId": 1745840329319,
+  "capital": 330
 }
